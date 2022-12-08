@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" class="astro-56V6Q725">
+	<head>
+		<!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="generator" content="Astro v1.6.13">
+
+<!-- Primary Meta Tags -->
+<title>Exploring my Spotify data</title>
+<meta name="title" content="Exploring my Spotify data">
+<meta name="description" content="Taking a look at different pieces of data you can get out of Spotify's data export.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com/blog/exploring-spotify-data/">
+<meta property="og:title" content="Exploring my Spotify data">
+<meta property="og:description" content="Taking a look at different pieces of data you can get out of Spotify's data export.">
+<meta property="og:image" content="https://example.com/placeholder-social.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://example.com/blog/exploring-spotify-data/">
+<meta property="twitter:title" content="Exploring my Spotify data">
+<meta property="twitter:description" content="Taking a look at different pieces of data you can get out of Spotify's data export.">
+<meta property="twitter:image" content="https://example.com/placeholder-social.jpg">
+
+		
+	<link rel="stylesheet" href="/assets/exploring-spotify-data.367b4f37.css" />
+<link rel="stylesheet" href="/assets/exploring-spotify-data.cd791a1a.css" /></head>
+
+	<body class="astro-56V6Q725">
+		<header class="astro-QKDUZEDN">
+	<h2 class="astro-QKDUZEDN">
+		Derrick&#39;s Tiny Blog
+	</h2>
+	<nav class="astro-QKDUZEDN">
+		<a href="/" class="astro-QKDUZEDN astro-FPRMATIO">
+	Home
+</a>
+
+		<a href="/blog" class="astro-QKDUZEDN astro-FPRMATIO">
+	Blog
+</a>
+
+		<a href="/bits_and_bobs" class="astro-QKDUZEDN astro-FPRMATIO">
+	Bits and Bobs
+</a>
+
+		<a href="https://github.com/derrickp" class="astro-QKDUZEDN astro-FPRMATIO" target="_blank">
+	GitHub
+</a>
+
+	</nav>
+</header>
+
+		<main class="astro-56V6Q725">
+			<article class="astro-56V6Q725">
+				
+				<h1 class="title astro-56V6Q725">Exploring my Spotify data</h1>
+				<time class="astro-56V6Q725">Feb 03 2020</time>
+				
+				<hr class="astro-56V6Q725">
+				<p><strong>Note from Derrick in December 2022</strong> - I’ll be writing another post about something similar in the near future which uses the Krustens terminal app I wrote. But read on for what I was thinking in 2020!</p>
+<hr>
+<p>Did you know that you can export a bunch of data out of Spotify? Buried inside of Privacy Settings inside your Account page at the very bottom you can ask Spotify to give you a consolidated download copy of your data. It takes a bit of time for them to gather it (for me it was usually 3-5 days), and they only give you about a year of your streaming history (I really wish they’d give me <em>everything</em>). Apparently you can contact them for your entire history, but I have not done that yet as I have not felt like it. But, even with only a year’s worth of data it can be really interesting to dig through.</p>
+<h2 id="the-data">The data</h2>
+<p>Most of the data is contained inside of various JSON files, and thankfully they all seem to have a fairly simple schema.</p>
+<h3 id="account-data">Account data</h3>
+<p>I didn’t find a ton of the account data to be that interesting, but some interesting bits can be found in <code>Identity.json</code> such as if you are a <code>tasteMaker</code> or not (I am not) and in <code>Userdata.json</code> you can find out when your account was created (2015 for me apparently).</p>
+<h3 id="musiclistlibrary-data">Music/List/Library data</h3>
+<p>Now we get to the fun bits.</p>
+<p>There’s a file called <code>SearchQueries.json</code> that details where and what you were searching, in addition to what artist you clicked on from the search. For instance I typed “in this” and then have an artist URI in there for “In This Moment”, which makes sense. I haven’t dug through this file too much yet, but it might be fairly interesting to see where I search the most (I assume Android), and how many characters I use before clicking an artist (and how often I mistype something).</p>
+<p>There’s a <code>Follow.json</code> file, which shows, I think, how many artists and users you follow, and lists the names of the artists as well. Mine is fairly small, as I don’t really “follow” that many people in Spotify.</p>
+<p>There’s a <code>Playlist.json</code> file that gives me the full playlist of any ones that I created (super handy) as well as shows some other playlists I’ve followed (I think?) and one for “Liked from Radio” which I assume is just a Spotify created one. I don’t use Playlists all that often other than a couple workout ones and one <em>massive</em> one entitled “Let’s Drive!“. One interesting thing here, they also tell you if it’s from a local file or not, for anyone that uses local files inside of Spotify.</p>
+<p><code>YourLibrary.json</code> lists out all of the artists/songs/albums you’ve added to your Library, which definitely makes me realize I should use this a bit more, as I almost never think about my Library, but could be an interesting way to keep a record of a bunch of artists I want to check out a bit more, and things like that. This also has a section for “shows”, “episodes” and “bannedTracks”. The banned tracks one was empty for me, but I feel like I should use it more, cause some bands I just don’t want to come up.</p>
+<p>And finally, the file that I spent the most time reading through, <code>StreamingHistory0.json</code>. Specifically for me I wanted to know how many times I listened to all of the different albums.</p>
+<h2 id="diving-through-the-streaming-history">Diving through the streaming history</h2>
+<p>The JSON of the streaming history has a fairly simple structure.</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">{</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #A5D6FF">"endTime"</span><span style="color: #C9D1D9"> : </span><span style="color: #A5D6FF">"2019-01-02 06:15"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #A5D6FF">"artistName"</span><span style="color: #C9D1D9"> : </span><span style="color: #A5D6FF">"Goblinsmoker"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #A5D6FF">"trackName"</span><span style="color: #C9D1D9"> : </span><span style="color: #A5D6FF">"Toad King"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #A5D6FF">"msPlayed"</span><span style="color: #C9D1D9"> : </span><span style="color: #79C0FF">15131</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<p>All that makes sense, when the stream ended, the artist, track and how long you played it for.  For me, when I was digging through the history I focused on songs that I had listened to for more than a minute, I figured if I only listened for 20s, then do I really care? So of the 8000+ songs in my streaming history, there were ~6300 that I had listened to for more than a minute.</p>
+<p>Something I wish was in there was the album that the track was listened to on, and since I wanted that album I had to go somewhere else to get it. I probably <em>could</em> have tried to get it out of the Library file I got, but didn’t think about that. I also probably could have queried Spotify through an API, but where’s the fun in that?! Embrace other things! So to <a href="https://musicbrainz.org/">Musicbrainz</a> I go! Specifically their JSON API, which might not be as full-featured as their XML API but seemed to work fine.</p>
+<p>To help with this I wrote 2 very thin wrappers around their JSON endpoints. They work, but probably have bugs. I also only coded bits around the exact parts of the API I actually wanted to use, so probably not helpful for everyone. But hopefully if anyone uses them, they aren’t terrible. <a href="https://github.com/derrickp/musicz">Ruby</a> and <a href="https://github.com/derrickp/musikt">Kotlin</a>.</p>
+<p>One thing I found was that it was definitely easier to query the “recording” entities instead of the artist and then get the recordings through that. It felt a little more like going to the source. Almost across the board I was able to always find a recording with a score of 100 (best match possible) by passing in <code>artistname</code> and <code>title</code> as the query. Some caveats though</p>
+<ol>
+<li>If the artist name had <code>&#x26;</code> in it, I needed to replace it with <code>and</code></li>
+<li>Some of the songs from Spotify had things like <code>2015 remaster</code> in it, and I needed to remove that to get any results</li>
+<li>For some reason if the song title had <code>'s</code> or other similar ones and I needed to strip these out. Probably something I am missing.</li>
+<li>Sometimes, it just broke on titles not quite being right, like <code>Through the Wall of Light Pt. II</code> vs <code>Through the Wall of Light Pt.II</code></li>
+<li>I originally used <code>artist</code> instead of <code>artistname</code> but found that for some <code>artist</code> didn’t have the full name in the system</li>
+</ol>
+<p>Overall it all worked great, other than getting throttled when I wasn’t careful, so I made sure to slow it all down.</p>
+<p>There were a few artists that weren’t found, and others where it wouldn’t find the album, but I worked around that by just recording an <code>Unknown Album</code> for those, and if it appeared as a top listen tried to fix manually. Not too many of those though. Things fell apart a bit for songs that appear on tons of albums (like Iron Maiden songs) and I would mark all of the recordings that came back, this wasn’t too big an issue for me, but your mileage may vary. Probably something I could also fix with some manual intervention or digging through after. Because I kept all the high-scoring (in terms of relevance) albums, I never lost data, but just reported more albums than I actually listened to. But for me, none of them appeared in my top 10 at all.</p>
+<p>A small amount of fun stats!</p>
+<ol>
+<li>Devin Townsend’s Empath was 1/3 of my listens for the year</li>
+<li>Slipknot’s We Are Not Your Kind was 1/6.</li>
+<li>I should have mentioned Andrew W.K. in my previous blog as I listened to his newest one quite a bit and love it.</li>
+<li>I listened to the new Baroness album a lot (400+ times), and I like it, but I wish the mixing was better. That’s what kept it out of my top of the year lists.</li>
+<li>I probably didn’t listen to TOOL’s Fear Inoculum enough (only 66 times)</li>
+</ol>
+<p>Here’s my top 10 for listens:</p>
+<ol>
+<li>Devin Townsend, Empath, 2033</li>
+<li>Slipknot, We Are Not Your Kind, 1081</li>
+<li>Whitechapel, The Valley, 801</li>
+<li>Opeth, In Cauda Venenum, 664</li>
+<li>Andrew W.K., You’re Not Alone, 637</li>
+<li>Zeal &#x26; Ardor, Stranger Fruit, 584</li>
+<li>Behemoth, The Satanist, 460</li>
+<li>Ghost, Prequelle, 448</li>
+<li>Baroness, Gold &#x26; Grey, 448</li>
+<li>Rivers of Nihil, Where Owls Know My Name, 392</li>
+</ol>
+<p>I apparently listened to Ghost a lot, but I just don’t think it stayed with me enough at the end of the year to toss it on my top lists. But I still really liked the album.</p>
+<p>If you want to see the terrible, terrible code I wrote to get all this info, you can find it <a href="https://github.com/derrickp/spotikt">here</a>.</p>
+<p>For my next steps, I think I’m going to get the areas where the artist’s are from out of Musicbrainz and start putting them on a map for myself (I love maps), and try to hook up something that will get closer to near-live data out of Spotify.</p>
+			</article>
+		</main>
+		<footer class="astro-SVXRYGVZ">
+	&copy; 2022 Derrick. All rights reserved.
+</footer>
+
+	</body></html>
