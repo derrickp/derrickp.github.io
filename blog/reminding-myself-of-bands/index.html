@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" class="astro-KMK4RL45">
+	<head>
+		<!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="generator" content="Astro v1.7.2">
+
+<!-- Primary Meta Tags -->
+<title>Reminding myself of bands I&#39;ve listened to</title>
+<meta name="title" content="Reminding myself of bands I've listened to">
+<meta name="description" content="How I've reminded myself of what I might want to listen to again.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com/blog/reminding-myself-of-bands/">
+<meta property="og:title" content="Reminding myself of bands I've listened to">
+<meta property="og:description" content="How I've reminded myself of what I might want to listen to again.">
+<meta property="og:image" content="https://example.com/placeholder-social.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://example.com/blog/reminding-myself-of-bands/">
+<meta property="twitter:title" content="Reminding myself of bands I've listened to">
+<meta property="twitter:description" content="How I've reminded myself of what I might want to listen to again.">
+<meta property="twitter:image" content="https://example.com/placeholder-social.jpg">
+
+		
+	<link rel="stylesheet" href="/assets/exploring-spotify-data.aff50500.css" />
+<link rel="stylesheet" href="/assets/exploring-spotify-data.8af1e11d.css" /></head>
+
+	<body class="astro-KMK4RL45">
+		<header class="astro-AOK657GM">
+	<h2 class="astro-AOK657GM">
+		Derrick&#39;s Tiny Blog
+	</h2>
+	<nav class="astro-AOK657GM">
+		<a href="/" class="astro-AOK657GM astro-4YZFUHJ7">
+	Home
+</a>
+
+		<a href="/blog" class="astro-AOK657GM astro-4YZFUHJ7">
+	Blog
+</a>
+
+		<a href="/bits_and_bobs" class="astro-AOK657GM astro-4YZFUHJ7">
+	Bits and Bobs
+</a>
+
+		<a href="https://github.com/derrickp" class="astro-AOK657GM astro-4YZFUHJ7" target="_blank">
+	GitHub
+</a>
+
+		<a href="https://fosstodon.org/@derrickp" class="astro-AOK657GM astro-4YZFUHJ7" rel="me" target="_blank">
+	Mastodon
+</a>
+
+	</nav>
+</header>
+
+		<main class="astro-KMK4RL45">
+			<article class="astro-KMK4RL45">
+				
+				<h1 class="title astro-KMK4RL45">Reminding myself of bands I&#39;ve listened to</h1>
+				<time class="astro-KMK4RL45">Dec 20 2022</time>
+				
+				<hr class="astro-KMK4RL45">
+				<p>Over the course of 2022 I’ve apparently listened to 700+ different artists. I found this statistic using the console app I made - <a href="https://crates.io/crates/krustens">krustens</a>. It’s probably not a perfect count, as the app interprets data from files downloaded from Apple and Spotify, but I think it’s close enough for my purposes.</p>
+<p>Now, not all of those 700+ artists are going to be ones that I listened to more than even a single song from, maybe when the “radio” takes over after an album ends, or they might be ones that I listened to a couple of times and decided I didn’t want to listen to them anymore. So if I’m going to try to remember artists to go back to, it’s probably not these ones that are worth seeing.</p>
+<p>So how can I both remember artists, but not the ones I don’t care about? I decided to try to solve this by adding 2 different commands to <code>krustens</code>.</p>
+<p>The first command I added is fairly straightforward. Tell me the artists that I listened to on a specific day. You give it a day in the format <code>YYYY-MM-DD</code> (e.g. <code>2022-10-31</code>) and it will return the artists you listened to on that day, and how many times you listened to them. This helps me remember the artists I listened to, but only partially solves the problem of the filtering, as some of the artists I might have only listened to once because it’s a single day.</p>
+<p>The second command is a bit more involved. It’s <code>random artists</code> which lets <code>krustens</code> suggest some random artists to me based on a number of criteria. 2 of the criteria, year and month, are fairly straightforward. I want artists suggested that I listened to in that year and month combined (if only year is given, then anytime in that year). But the last one to filter on is “Minimum number of listens”. This tells <code>krustens</code> to filter for artists I’ve listened to at least that many times. I usually use values like 5 or 10, so that I can find artists where I listened to maybe a whole album, or at least a few songs a few times. Using this, and by requesting to get at least 5-10 artists suggested I will usually find a few artists each month that I’ve listened to, but maybe forgot about or didn’t go back to, for whatever reason.</p>
+<p>Some of these are ones I might try again and find that no, I didn’t need to listen to them again. But other times I’ll find artists and albums that I end up listening to quite a bit more and get reminded that I do quite enjoy them.</p>
+<p>Eventually I’d love to add more to <code>krustens</code> to maybe help remind me of some automatically, or marking artists as ones I want to keep seeing. Maybe even adding some exports to an Apple Music or Spotify playlist. I can do these things inside of Apple Music or Spotify itself, by adding to a playlist or my library, but it is always fun to take a little dive through my streaming history and do something local instead.</p>
+<p>If you use Spotify or Apple music and want to dig through your history, I would definitely recommend downloading your data from them and looking through what you get. And if you want, download <code>krustens</code> (through <code>cargo</code>) and try it out! I’m looking at adding binaries for different systems soon.</p>
+<p>If you’re interested in <code>krustens</code> I’ll be doing some posts in the future about how it all works.</p>
+			</article>
+		</main>
+		<footer class="astro-XWMDHDHH">
+	&copy; 2022 Derrick. All rights reserved.
+</footer>
+
+	</body></html>
