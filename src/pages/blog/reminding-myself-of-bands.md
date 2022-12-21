@@ -19,6 +19,6 @@ Some of these are ones I might try again and find that no, I didn't need to list
 
 Eventually I'd love to add more to `krustens` to maybe help remind me of some automatically, or marking artists as ones I want to keep seeing. Maybe even adding some exports to an Apple Music or Spotify playlist. I can do these things inside of Apple Music or Spotify itself, by adding to a playlist or my library, but it is always fun to take a little dive through my streaming history and do something local instead.
 
-If you use Spotify or Apple music and want to dig through your history, I would definitely recommend downloading your data from them and looking through what you get. And if you want, download `krustens` (through `cargo`) and try it out! I'm looking at adding binaries for different systems soon.
+If you use Spotify or Apple music and want to dig through your history, I would definitely recommend downloading your data from them and looking through what you get. And if you want, download `krustens` (through [cargo](https://crates.io/crates/krustens) or clone the [github](https://github.com/derrickp/krustens)) and try it out! I'm looking at adding binaries for different systems soon.
 
 If you're interested in `krustens` I'll be doing some posts in the future about how it all works.
