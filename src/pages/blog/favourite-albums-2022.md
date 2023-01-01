@@ -40,4 +40,4 @@ So instead of a top 10, I'll just talk briefly about some of the great albums I'
 #### Want some more?
 Here are some more albums that I loved this year. All fantastic, and I'll likely be coming back to all of these.
 
-[Hath](https://hathnj.bandcamp.com/music) - All That Was Promised, [Nite](https://nitemetal.bandcamp.com/music) - Voices of the Kronian Moon, [Maul](https://maul701.bandcamp.com/music) - Seraphic Punishment, [De Profundis](https://deprofundisband.bandcamp.com/releases), [Sonja](https://sonjaband.bandcamp.com/music) - Loud Arriver
+[Hath](https://hathnj.bandcamp.com/music) - All That Was Promised, [Nite](https://nitemetal.bandcamp.com/music) - Voices of the Kronian Moon, [Maul](https://maul701.bandcamp.com/music) - Seraphic Punishment, [De Profundis](https://deprofundisband.bandcamp.com/releases) - The Corruption of Virtue, [Sonja](https://sonjaband.bandcamp.com/music) - Loud Arriver
