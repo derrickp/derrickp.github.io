@@ -2,7 +2,7 @@
 layout: "../layouts/Page.astro"
 title: "Bits and Bobs"
 description: "My current and previous projects"
-updatedDate: "December 07 2022"
+updatedDate: "January 28 2023"
 ---
 
 ### In Active Development and Released
@@ -24,10 +24,13 @@ Have you ever wanted to take a journey through your Spotify or Apple Music data?
 #### [TuneSage](https://github.com/spinninggoblin/tune_sage)
 A fairly light-weight, Rust wrapper around the [MusicBrainz API](https://musicbrainz.org/doc/MusicBrainz_API). Not complete, but works.
 
+#### [tdlg](https://crates.io/crates/tdlg)
+It's a top-down level generator! It uses text templates to generate a square map of rooms and empty space. Used by Under Farm and Goblin Hall.
+
+#### [Goblin Hall](https://github.com/SpinningGoblin/goblin_hall)
+Another very early stages game. I haven't quite decided exactly what this will be yet, but I'm using it to play around with bevy and do some learning.
+
 ### Not as Active Development
 
 #### [Under Farm](https://github.com/derrickp/under_farm)
 A very early stages procedurally generated game using the [Bevy](https://bevyengine.org/) game engine. You're a goblin. You can walk around. You can destroy walls and plant crops.
-
-#### [tdlg](https://crates.io/crates/tdlg)
-It's a top-down level generator! It uses text templates to generate a square map of rooms and empty space. Used by Under Farm.
