@@ -2,7 +2,7 @@
 layout: "../../layouts/BlogPost.astro"
 title: "Configuration during game development"
 description: "A retrospective on 2 different configuration formats."
-pubDate: "Jan 28 2023"
+pubDate: "Jan 31 2023"
 ---
 
 I've tried to make a game a few times. Previously it was [Under Farm](https://github.com/derrickp/under_farm). The current game I'm learning game development while making is [Goblin Hall](https://github.com/SpinningGoblin/goblin_hall) (will that be the actual game name? No idea.).
