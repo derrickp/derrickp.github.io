@@ -4,7 +4,7 @@
 		<!-- Global Metadata --><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<meta name="generator" content="Astro v2.1.7">
+<meta name="generator" content="Astro v2.8.0">
 
 <!-- Primary Meta Tags -->
 <title>Exploring my Spotify data</title>
@@ -23,8 +23,8 @@
 <meta property="twitter:title" content="Exploring my Spotify data">
 <meta property="twitter:description" content="Taking a look at different pieces of data you can get out of Spotify's data export.">
 		
-	<link rel="stylesheet" href="/assets/asset.9f0b91ec.css" />
-<link rel="stylesheet" href="/assets/asset.69091d71.css" /></head>
+	<link rel="stylesheet" href="/assets/asset.bc71f0f9.css" />
+<link rel="stylesheet" href="/assets/asset.a04cf052.css" /></head>
 
 	<body class="astro-BVZIHDZO">
 		<header class="astro-3EF6KSR2">
@@ -72,12 +72,12 @@
 <p>And finally, the file that I spent the most time reading through, <code>StreamingHistory0.json</code>. Specifically for me I wanted to know how many times I listened to all of the different albums.</p>
 <h2 id="diving-through-the-streaming-history">Diving through the streaming history</h2>
 <p>The JSON of the streaming history has a fairly simple structure.</p>
-<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">{</span></span>
-<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #A5D6FF">"endTime"</span><span style="color: #C9D1D9"> : </span><span style="color: #A5D6FF">"2019-01-02 06:15"</span><span style="color: #C9D1D9">,</span></span>
-<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #A5D6FF">"artistName"</span><span style="color: #C9D1D9"> : </span><span style="color: #A5D6FF">"Goblinsmoker"</span><span style="color: #C9D1D9">,</span></span>
-<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #A5D6FF">"trackName"</span><span style="color: #C9D1D9"> : </span><span style="color: #A5D6FF">"Toad King"</span><span style="color: #C9D1D9">,</span></span>
-<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #A5D6FF">"msPlayed"</span><span style="color: #C9D1D9"> : </span><span style="color: #79C0FF">15131</span></span>
-<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">{</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #9ECBFF">"endTime"</span><span style="color: #E1E4E8"> : </span><span style="color: #9ECBFF">"2019-01-02 06:15"</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #9ECBFF">"artistName"</span><span style="color: #E1E4E8"> : </span><span style="color: #9ECBFF">"Goblinsmoker"</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #9ECBFF">"trackName"</span><span style="color: #E1E4E8"> : </span><span style="color: #9ECBFF">"Toad King"</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #9ECBFF">"msPlayed"</span><span style="color: #E1E4E8"> : </span><span style="color: #79B8FF">15131</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
 <p>All that makes sense, when the stream ended, the artist, track and how long you played it for.  For me, when I was digging through the history I focused on songs that I had listened to for more than a minute, I figured if I only listened for 20s, then do I really care? So of the 8000+ songs in my streaming history, there were ~6300 that I had listened to for more than a minute.</p>
 <p>Something I wish was in there was the album that the track was listened to on, and since I wanted that album I had to go somewhere else to get it. I probably <em>could</em> have tried to get it out of the Library file I got, but didn’t think about that. I also probably could have queried Spotify through an API, but where’s the fun in that?! Embrace other things! So to <a href="https://musicbrainz.org/">Musicbrainz</a> I go! Specifically their JSON API, which might not be as full-featured as their XML API but seemed to work fine.</p>
 <p>To help with this I wrote 2 very thin wrappers around their JSON endpoints. They work, but probably have bugs. I also only coded bits around the exact parts of the API I actually wanted to use, so probably not helpful for everyone. But hopefully if anyone uses them, they aren’t terrible. <a href="https://github.com/derrickp/musicz">Ruby</a> and <a href="https://github.com/derrickp/musikt">Kotlin</a>.</p>
