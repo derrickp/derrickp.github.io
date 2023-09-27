@@ -1,69 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" class="astro-BVZIHDZO">
-	<head>
-		<!-- Global Metadata --><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<meta name="generator" content="Astro v2.8.0">
-
-<!-- Primary Meta Tags -->
-<title>Configuration during game development</title>
-<meta name="title" content="Configuration during game development">
-<meta name="description" content="A retrospective on 2 different configuration formats.">
-
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://derrickp.ca/blog/config-driven-game/">
-<meta property="og:title" content="Configuration during game development">
-<meta property="og:description" content="A retrospective on 2 different configuration formats.">
-
-<!-- Twitter -->
-<meta property="twitter:card" content="summary">
-<meta property="twitter:url" content="https://derrickp.ca/blog/config-driven-game/">
-<meta property="twitter:title" content="Configuration during game development">
-<meta property="twitter:description" content="A retrospective on 2 different configuration formats.">
-		
-	<link rel="stylesheet" href="/assets/asset.bc71f0f9.css" />
-<link rel="stylesheet" href="/assets/asset.a04cf052.css" /></head>
-
-	<body class="astro-BVZIHDZO">
-		<header class="astro-3EF6KSR2">
-	<h2 class="astro-3EF6KSR2">
-		Derrick&#39;s Tiny Blog
-	</h2>
-	<nav class="astro-3EF6KSR2">
-		<a href="/" class="astro-3EF6KSR2 astro-EIMMU3LG">
-	Home
-</a>
-		<a href="/blog" class="astro-3EF6KSR2 astro-EIMMU3LG">
-	Blog
-</a>
-		<a href="/bits_and_bobs" class="astro-3EF6KSR2 astro-EIMMU3LG">
-	Bits and Bobs
-</a>
-		<a href="https://github.com/derrickp" class="astro-3EF6KSR2 astro-EIMMU3LG" target="_blank">
-	GitHub
-</a>
-		<a href="https://fosstodon.org/@derrickp" class="astro-3EF6KSR2 astro-EIMMU3LG" rel="me" target="_blank">
-	Mastodon
-</a>
-	</nav>
-</header>
-		<main class="astro-BVZIHDZO">
-			<article class="astro-BVZIHDZO">
-				
-				<h1 class="title astro-BVZIHDZO">Configuration during game development</h1>
-				<time class="astro-BVZIHDZO">Jan 31 2023</time>
-				
-				<hr class="astro-BVZIHDZO">
-				<p>I’ve tried to make a game a few times. Previously it was <a href="https://github.com/derrickp/under_farm">Under Farm</a>. The current game I’m learning game development while making is <a href="https://github.com/SpinningGoblin/goblin_hall">Goblin Hall</a> (will that be the actual game name? No idea.).</p>
+<!DOCTYPE html><html lang="en" data-astro-cid-bvzihdzo><head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v3.1.4"><!-- Primary Meta Tags --><title>Configuration during game development</title><meta name="title" content="Configuration during game development"><meta name="description" content="A retrospective on 2 different configuration formats."><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://derrickp.ca/blog/config-driven-game/"><meta property="og:title" content="Configuration during game development"><meta property="og:description" content="A retrospective on 2 different configuration formats."><!-- Twitter --><meta property="twitter:card" content="summary"><meta property="twitter:url" content="https://derrickp.ca/blog/config-driven-game/"><meta property="twitter:title" content="Configuration during game development"><meta property="twitter:description" content="A retrospective on 2 different configuration formats."><style>@media (prefers-color-scheme: dark){h1,h2,h3,h4,h5,h6,strong,b{color:#bb86fc}body{color:#ffffffde;background:#121212}a{color:#01b4cc}code{color:#222;background-color:#989898}a:visited{color:#985eff}}@media (prefers-color-scheme: light){h1,h2,h3,h4,h5,h6,strong,b{color:#222}body{color:#444;background:#fff}a{color:#3273dc}code{padding:2px 5px}a:visited{color:#8e32dc}}body{font-family:Verdana,sans-serif;margin:auto;padding:20px;max-width:65ch;text-align:left;word-wrap:break-word;overflow-wrap:break-word;line-height:1.5;letter-spacing:1px}a,h1,h2,h3,h4,h5,h6,strong,b{letter-spacing:1px}nav a{margin-right:10px}textarea{width:100%;font-size:16px}input{font-size:16px}content{line-height:1.6}table{width:100%}img{max-width:100%;height:auto}code{padding:2px 5px}pre{padding:1rem}pre>code{all:unset}blockquote{border:1px solid #999;color:#222;padding:2px 0 2px 20px;margin:0;font-style:italic}a[data-astro-cid-eimmu3lg]{display:inline-block;text-decoration:none}a[data-astro-cid-eimmu3lg].active{font-weight:bolder;text-decoration:underline}header[data-astro-cid-3ef6ksr2]{margin:0 0 2em}h2[data-astro-cid-3ef6ksr2]{margin:.5em 0}footer[data-astro-cid-sz7xmlte]{padding:25px;text-align:center}
+.title[data-astro-cid-bvzihdzo]{font-size:2em;margin:.25em 0 0}hr[data-astro-cid-bvzihdzo]{border-top:1px solid #ddd;margin:1rem 0}
+</style></head><body data-astro-cid-bvzihdzo><header data-astro-cid-3ef6ksr2><h2 data-astro-cid-3ef6ksr2>Derrick&#39;s Tiny Blog</h2><nav data-astro-cid-3ef6ksr2><a href="/" data-astro-cid-3ef6ksr2 data-astro-cid-eimmu3lg>Home</a><a href="/blog" data-astro-cid-3ef6ksr2 data-astro-cid-eimmu3lg>Blog</a><a href="/bits_and_bobs" data-astro-cid-3ef6ksr2 data-astro-cid-eimmu3lg>Bits and Bobs</a><a href="https://github.com/derrickp" target="_blank" data-astro-cid-3ef6ksr2 data-astro-cid-eimmu3lg>GitHub</a><a href="https://fosstodon.org/@derrickp" rel="me" target="_blank" data-astro-cid-3ef6ksr2 data-astro-cid-eimmu3lg>Mastodon</a></nav></header><main data-astro-cid-bvzihdzo><article data-astro-cid-bvzihdzo><h1 class="title" data-astro-cid-bvzihdzo>Configuration during game development</h1><time data-astro-cid-bvzihdzo>Jan 31 2023</time><hr data-astro-cid-bvzihdzo><p>I’ve tried to make a game a few times. Previously it was <a href="https://github.com/derrickp/under_farm">Under Farm</a>. The current game I’m learning game development while making is <a href="https://github.com/SpinningGoblin/goblin_hall">Goblin Hall</a> (will that be the actual game name? No idea.).</p>
 <p>Both times I have tried to approach development by being able to configure aspects of the game separate from the game’s source code. A configuration or data-centric approach. This is useful since you can tweak values for the game, like sprite locations or tile sizes, without needing to recompile your code every time you want to make a change.</p>
 <p>The first game (Under Farm) I used <a href="https://kdl.dev/">KDL</a> which could have gone better. I like the KDL syntax quite a bit, but the support for automatic deserialization in Rust (my language of choice right now) was a bit lacking in comparison to something like JSON. This is unsurprising, since JSON is quite a bit more popular, but it is worth noting. I ended up writing code to move from KDL Node and Values and push them into my configuration structs. This ended up being cumbersome, and while I could have wrote something to do it automatically, it wasn’t really what I was trying to learn while working on the game. I eventually (almost inevitably) stopped putting as much into configuration as I could have. When every new value added becomes a chore, you end up not wanting to add anything and just deal with the <code>const</code> values in your code. Maybe I’ll eventually go back and some better automatic serde support for KDL.</p>
 <p>Flash forward a bit of time and I’m starting work on Goblin Hall. Starting out (fresh-ish, I kept sprites and copied some of the basic code) I decided to rethink my configuration approach. I’ve used <a href="https://crates.io/crates/serde">serde</a> and <a href="https://crates.io/crates/serde_json">serde_json</a> quite a lot in all of my various other side projects, so I decided to start there. And so far it’s been a much better experience. Not having to write the deserialization boilerplate for my configuration structs has meant I usually try to think about how I can configure values from the start, instead of first reaching for constants in my code.</p>
-<p>As of right now, I’ll be continuing with the JSON approach as I build out my first mechanics in Goblin Hall and figure out the type of game I want to build.</p>
-			</article>
-		</main>
-		<footer class="astro-SZ7XMLTE">
-	&copy; 2023 Derrick. All rights reserved.
-</footer>
-	</body></html>
+<p>As of right now, I’ll be continuing with the JSON approach as I build out my first mechanics in Goblin Hall and figure out the type of game I want to build.</p></article></main><footer data-astro-cid-sz7xmlte>
+&copy; 2023 Derrick. All rights reserved.
+</footer></body></html>
